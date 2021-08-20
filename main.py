@@ -30,6 +30,4 @@ def read_root(all_path:str,user_agent: Optional[str] = Header(None)):
     else:
         status_code = 503
     return Response(content=template, media_type="text/html",status_code=status_code)
-    
-if __name__ == '__main__':
-    uvicorn.run("main:app", host="127.0.0.1", port=5000, log_level="info")
+
