@@ -1,0 +1,5 @@
+FROM public.ecr.aws/lambda/python:3.8
+COPY . /app
+WORKDIR /app
+RUN pip install --upgrade pip && pip install -r ./requirements.txt && pip install magnum
+CMD ["app.main.handler"]

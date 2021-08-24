@@ -31,3 +31,4 @@ def read_root(all_path:str,user_agent: Optional[str] = Header(None)):
         status_code = 503
     return Response(content=template, media_type="text/html",status_code=status_code)
 
+handler = Mangum(app)
