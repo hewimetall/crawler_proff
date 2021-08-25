@@ -1,0 +1,8 @@
+version: "3"  
+services:
+  crawler:
+    image: crawler
+    restart: "always"
+    build: .
+    volumes:
+      - /run/crawler/:/run/crawler/
