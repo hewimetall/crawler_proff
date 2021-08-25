@@ -31,3 +31,5 @@ def read_root(event:dict, context):
         'statusCode': status_code,
         'body': template,
     }
+
+ #sudo /home/x/project/crawler/.env/bin/uvicorn  main:app --uds /run/crawler.sock
