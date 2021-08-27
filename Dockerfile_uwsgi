@@ -1,0 +1,8 @@
+FROM python:latest
+COPY ./wsgi.py /app.py
+EXPOSE 6565
+RUN apt install build-essential  python-dev && pip install uWSGI
+CMD ["uwsgi", "--http","127.0.0.1:6565","--wsgi-file","app.py"]
+#CMD ["uvicorn", "main:app", "--host", "127.0.0.1", "--port", "6565"]
+#CMD ["uvicorn", "app.main:app", "--uds", "/run/crawler/crawler.sock"]
+#gunicorn -w 4 -k uvicorn.workers.UvicornH11Worker
