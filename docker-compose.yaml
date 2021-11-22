@@ -3,6 +3,7 @@ services:
   crawler:
     image: crawler
     restart: "always"
+    network_mode: "host"
     build: .
     volumes:
       - /run/crawler/:/run/crawler/
